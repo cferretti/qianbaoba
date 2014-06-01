@@ -1,0 +1,26 @@
+{
+  "name": "wallet",
+  "version": "0.0.1",
+  "authors": [
+    "Cédric Ferretti <ferretticedric@gmail.com>"
+  ],
+  "description": "Simple online wallet for manage budget",
+  "main": "www/index.html",
+  "keywords": [
+    "wallet",
+    "real-time",
+    "angularjs",
+    "mongodb"
+  ],
+  "license": "MIT",
+  "homepage": "Home",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ]
+}
