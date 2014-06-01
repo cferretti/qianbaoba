@@ -1,0 +1,104 @@
+body {
+  background-color: #33CC99;
+}
+p,
+li {
+  color: #333;
+}
+/* Utility */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+.center {
+  margin: auto;
+}
+.margin-sm {
+  margin: 5px;
+}
+.margin-sm-top {
+  margin: 0;
+  margin-top: 5px;
+}
+.margin {
+  margin: 10px;
+}
+.margin-right {
+  margin: 0;
+  margin-right: 10px;
+}
+.margin-xl {
+  margin: 20px;
+}
+/* List */
+.list {
+  padding: 0;
+  width: : 100%;
+}
+.list li {
+  list-style: none;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+/* Title */
+.title {
+  color: #fff;
+}
+.subtitle {
+  color: #f2f2f2;
+}
+/* Debit / Credit */
+.history .fa-caret-up {
+  color: green;
+}
+.history .fa-caret-down {
+  color: red;
+}
+.secondary-bg {
+  background-color: #fff;
+  color: #333;
+}
+.rounded,
+.list li {
+  border-radius: 4px;
+}
+.rounded tr:last-of-type td {
+  border-radius: 0px 0px 4px 4px;
+}
+.padding {
+  padding: 10px;
+}
+.padding-sm {
+  padding: 5px;
+}
+.padding-xl {
+  padding: 20px;
+}
+.sample-show-hide.ng-hide-add,
+.sample-show-hide.ng-hide-remove {
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  display: block!important;
+}
+.sample-show-hide.ng-hide-add.ng-hide-add-active,
+.sample-show-hide.ng-hide-remove {
+  opacity: 0;
+}
+.sample-show-hide.ng-hide-add,
+.sample-show-hide.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
