@@ -3,8 +3,15 @@ var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
 var apiRouter     = require('./api');
 var mongoose = require('mongoose');
+var environment = process.env.NODE_ENV || 'dev';
 
-mongoose.connect('mongodb://localhost/wallet');
+if(environment == 'production'){
+	var mongodbUrl = process.env.MONGOHQ_URL;
+}else{
+	var mongodbUrl = 'mongodb://localhost/wallet';
+}
+
+mongoose.connect(mongodbUrl);
 
 var app = express();
 
