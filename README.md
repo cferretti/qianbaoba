@@ -20,4 +20,4 @@ Done
 
 Preview
 =======
-![alt tag](http://image.noelshack.com/fichiers/2014/22/1401643764-wallet-page.png)
+![alt tag](http://image.noelshack.com/fichiers/2014/22/1401644263-wallet-page.png)
