@@ -1,5 +1,5 @@
 module.exports = function (mod) {
-	angular.module('controllers').controller('WalletCtrl', ['$scope', 'WalletModel', function WalletCtrl($scope, WalletModel) {
+	angular.module('controllers').controller('WalletCtrl', ['$scope', '$stateParams', '$location', 'WalletModel', function WalletCtrl($scope, $stateParams, $location, WalletModel) {
 		$scope.wallet = '';
 		$scope.nbPages = 0;
 		$scope.offset = 0;
@@ -22,6 +22,10 @@ module.exports = function (mod) {
 		};
 
 		$scope.getCurrentAmount = function(){
+			if($scope.wallet == '' || $scope.wallet.transactions === undefined){
+				return 0;
+			}
+
 			return WalletModel.getWalletAmount($scope.wallet);
 		};
 
@@ -39,10 +43,7 @@ module.exports = function (mod) {
 			}) 
 		};
 
-		WalletModel.getWallet("538b5c4d674efe301fa343f8", function(data, error){
-				$scope.wallet = data;
-				$scope.nbPages = Math.ceil(data.transactions.length / $scope.bypage);
-		});
+		
 
 		$scope.range = function(n){
 		     return new Array(n);
@@ -52,9 +53,15 @@ module.exports = function (mod) {
 			$scope.transaction = WalletModel.newTransaction();
 		}
 
-		// WalletModel.insertWallet(function(data, error){
-		// 	console.log(data);
-  //     $scope.wallet = data;
-		// });
+		if($stateParams.id !== undefined){
+			WalletModel.getWallet($stateParams.id, function(data, error){
+				if(error){
+					alert('Sorry wallet not find !');
+					$location.path("/home");
+				}
+				$scope.wallet = data;
+				$scope.nbPages = Math.ceil(data.transactions.length / $scope.bypage);
+			});
+		}
 	}]);
 };

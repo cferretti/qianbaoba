@@ -62,6 +62,19 @@
             }
 
             return current;
+          },
+          insertWallet : function(wallet, callback){
+             $http({
+                method: 'POST',
+                url: '/api/wallet/',
+                data : wallet
+              }).
+              success(function(data, status, headers, config) {
+                callback(data, null);
+              }).
+              error(function(data, status, headers, config) {
+                callback(null, status);
+              });
           }
         }
     }]);

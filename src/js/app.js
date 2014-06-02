@@ -23,9 +23,14 @@ wallet.config(function($stateProvider, $urlRouterProvider) {
       url: "/wallet/:id",
       templateUrl: "views/wallet/index.html",
       controller : 'WalletCtrl'
+    })
+    .state('home', {
+      url: "/home",
+      templateUrl: "views/home/index.html",
+      controller : 'HomeCtrl'
     });
 
-	$urlRouterProvider.otherwise("/wallet/adzd");
+	$urlRouterProvider.otherwise("/home");
 });
 
 wallet.filter('startFrom', function() {

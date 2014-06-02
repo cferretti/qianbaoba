@@ -37,6 +37,9 @@ router.post('/', function(req, res, next) {
 });
 
 router.all('/:id', getWallet);
+router.get('/:id', function(req, res, next){
+    res.send(req.wallet);
+});
 
 router.put('/:id', function(req, res, next) {
 
