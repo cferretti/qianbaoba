@@ -3,7 +3,7 @@
 			p.title.lead Welcome on this online wallet, first create a wallet
 			h1.title Qianbaoba
 				small(ng-hide="wallet._id === undefined") : {{ wallet._id }}
-			form.form-horizontal.secondary-bg.rounded.padding-xl(name="form_createWallet", ng-show="wallet._id === undefined")
+			form.form-horizontal.secondary-bg.rounded.padding-xl(name="form_createWallet", ng-show="wallet._id === undefined && !existingWallet")
 				.form-group
 					label.col-md-3.control-label Choose a title
 					.col-md-9
@@ -24,6 +24,15 @@
 						button.btn.btn-lg.btn-primary.palette.palette-green-sea(ng-click="createWallet()", ng-disabled="!form_createWallet.$valid")
 							i.fa.fa-plus.fa-fw
 							| Create a wallet
+						a.right(href="#", ng-click="existingWallet = true") I have a wallet
+			form.form-horizontal.secondary-bg.rounded.padding-xl(ng-show="wallet._id === undefined && existingWallet")
+				.form-group
+					label.col-md-3.control-label Wallet ID
+					.col-md-9
+						input.form-control.input-lg(type="text", name="title", placeholder="Wallet ID", required, ng-model="idWallet")
+				.form-group
+					.col-md-9.col-md-offset-3
+						a.btn.btn-lg.btn-primary.palette.palette-green-sea(href="#/wallet/{{idWallet}}") Access my wallet
 			.secondary-bg.rounded.padding-xl(ng-hide="wallet._id === undefined")
 				p.lead Congrats your wallet is create his ID is :
 					br

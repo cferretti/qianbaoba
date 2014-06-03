@@ -56,8 +56,8 @@ module.exports = function (mod) {
 		if($stateParams.id !== undefined){
 			WalletModel.getWallet($stateParams.id, function(data, error){
 				if(error){
-					alert('Sorry wallet not find !');
-					$location.path("/home");
+					$scope.wallet = '';
+					return;
 				}
 				$scope.wallet = data;
 				$scope.nbPages = Math.ceil(data.transactions.length / $scope.bypage);

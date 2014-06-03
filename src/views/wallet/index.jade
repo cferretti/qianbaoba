@@ -1,5 +1,5 @@
 .row
-	.col-md-12(ng-if="$scope.wallet !== ''")
+	.col-md-12(ng-show="wallet != ''")
 		.row
 			.col-md-6.col-xs-12
 				h1.title.h4 {{wallet.title}}
@@ -83,3 +83,6 @@
 											button.btn.btn-primary(href="#", ng-disabled="offset == 0", ng-click="offset = offset-1") Previous
 											button.btn.btn-primary(ng-repeat="i in range(nbPages) track by $index", ng-click="offset = $index", ng-disabled="offset == $index") {{$index+1}}
 											button.btn.btn-primary(href="#", ng-disabled="offset >= nbPages-1", ng-click="offset = offset+1") Next
+	.col-md-12(ng-show="wallet == ''")
+		p.bg-danger.text-center.rounded Sorry wallet not find.
+		a.right(href="#/home") Back home
